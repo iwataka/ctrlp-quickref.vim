@@ -19,12 +19,11 @@ First paths are loaded from the variable g:ctrlp_quickref_paths or
     # Write
     # some
     # comments
-
-    path/which/you/want/to/be/searched
+    path1
     path2
 
-    # additional comment
-    path3
+    # wildcard can be used
+    another/path/*
 
 ## Dependencies
 
