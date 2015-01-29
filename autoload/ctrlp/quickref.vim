@@ -6,9 +6,14 @@ let g:loaded_ctrlp_quickref = 1
 fu! s:read_local_config()
     if filereadable(expand('~/.ctrlp-quickref'))
         let l:content = system('cat ~/.ctrlp-quickref')
-        let l:paths = split(l:content, "\n")
-        call filter(l:paths, "v:val !~ '^#'")
-        call filter(l:paths, "v:val != ''")
+        let l:lines = split(l:content, "\n")
+        let l:paths = []
+        for line in l:lines
+            if line !~ '^#' && line != ''
+                let l:path = split(expand(line), '\n')
+                let l:paths += l:path
+            endif
+        endfor
         retu l:paths
     el
         retu []
