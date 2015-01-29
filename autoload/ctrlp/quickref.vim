@@ -8,11 +8,26 @@ if !exists("#CtrlP")
 endif
 
 fu! s:set_readonly()
-    au! CtrlP FileType * setlocal readonly |
+    au! CtrlP FileType *
+                \ setlocal readonly |
                 \ setlocal nomodifiable |
                 \ setlocal nobuflisted |
                 \ setlocal bufhidden=delete |
                 \ au! CtrlP
+endf
+
+fu! s:read_local_config()
+    if filereadable(expand('~/.ctrlp-quickref'))
+        let l:content = system('cat ~/.ctrlp-quickref')
+        let l:paths = split(l:content, "\n")
+        call filter(l:paths, "v:val !~ '^#'")
+        echom string(l:paths)
+        call filter(l:paths, "v:val != ''")
+        echom string(l:paths)
+        retu l:paths
+    el
+        retu []
+    endif
 endf
 
 call add(g:ctrlp_ext_vars, {
@@ -27,7 +42,8 @@ function! ctrlp#quickref#init()
     if !exists('g:ctrlp_quickref_paths')
         let g:ctrlp_quickref_paths = []
     endif
-    return g:ctrlp_quickref_paths
+    let l:additional_paths = s:read_local_config()
+    return g:ctrlp_quickref_paths + l:additional_paths
 endfunction
 
 function! ctrlp#quickref#accept(mode, str)
