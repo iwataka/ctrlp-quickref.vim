@@ -3,6 +3,18 @@ if exists('g:loaded_ctrlp_quickref') && g:loaded_ctrlp_quickref || v:version < 7
 endif
 let g:loaded_ctrlp_quickref = 1
 
+if !exists("#CtrlP")
+    aug CtrlP
+endif
+
+fu! s:set_readonly()
+    au! CtrlP FileType * setlocal readonly |
+                \ setlocal nomodifiable |
+                \ setlocal nobuflisted |
+                \ setlocal bufhidden=delete |
+                \ au! CtrlP
+endf
+
 call add(g:ctrlp_ext_vars, {
     \ 'init': 'ctrlp#quickref#init()',
     \ 'accept': 'ctrlp#quickref#accept',
@@ -20,6 +32,7 @@ endfunction
 
 function! ctrlp#quickref#accept(mode, str)
     call ctrlp#exit()
+    call s:set_readonly()
     silent! exe 'normal! :CtrlP ' . a:str . "\<cr>"
 endfunction
 
