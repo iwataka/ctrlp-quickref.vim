@@ -3,6 +3,8 @@ if exists('g:loaded_ctrlp_reference') && g:loaded_ctrlp_reference || v:version <
 endif
 let g:loaded_ctrlp_reference = 1
 
+let g:ctrlp_reference_readonly_enabled = 1
+
 call add(g:ctrlp_ext_vars, {
     \ 'init': 'ctrlp#reference#init()',
     \ 'accept': 'ctrlp#reference#accept',
@@ -19,16 +21,20 @@ fu! ctrlp#reference#init()
 endf
 
 fu! ctrlp#reference#accept(mode, str)
-    aug ctrlp-reference
-        au!
-        au BufEnter *
-            \ setlocal readonly |
-            \ setlocal nomodifiable |
-            \ setlocal nobuflisted |
-            \ setlocal bufhidden=delete
-    aug END
+    if g:ctrlp_reference_readonly_enabled
+        aug ctrlp-reference
+            au!
+            au BufEnter *
+                \ setlocal readonly |
+                \ setlocal nomodifiable |
+                \ setlocal nobuflisted |
+                \ setlocal bufhidden=delete
+        aug END
+    endif
     call call('ctrlp#acceptfile', [a:mode, a:str])
-    au! ctrlp-reference
+    if exists("#ctrlp-reference")
+        au! ctrlp-reference
+    endif
 endf
 
 let s:id = g:ctrlp_builtins + len(g:ctrlp_ext_vars)
