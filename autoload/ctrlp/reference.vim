@@ -5,6 +5,13 @@ let g:loaded_ctrlp_reference = 1
 
 let g:ctrlp_reference_readonly_enabled = 1
 
+let g:ctrlp_reference_open_extensions = ['html', 'pdf']
+
+let s:open_command = ''
+if has('unix')
+    let s:open_command = 'xdg-open'
+endif
+
 call add(g:ctrlp_ext_vars, {
     \ 'init': 'ctrlp#reference#init()',
     \ 'accept': 'ctrlp#reference#accept',
@@ -21,20 +28,34 @@ fu! ctrlp#reference#init()
 endf
 
 fu! ctrlp#reference#accept(mode, str)
-    if g:ctrlp_reference_readonly_enabled
-        aug ctrlp-reference
-            au!
-            au BufEnter *
-                \ setlocal readonly |
-                \ setlocal nomodifiable |
-                \ setlocal nobuflisted |
-                \ setlocal bufhidden=delete
-        aug END
+    if s:check_extension(a:str)
+        call system(s:open_command.' '.a:str)
+        call ctrlp#exit()
+    el
+        if g:ctrlp_reference_readonly_enabled
+            aug ctrlp-reference
+                au!
+                au BufEnter *
+                    \ setlocal readonly |
+                    \ setlocal nomodifiable |
+                    \ setlocal nobuflisted |
+                    \ setlocal bufhidden=delete
+            aug END
+        endif
+        call call('ctrlp#acceptfile', [a:mode, a:str])
+        if exists("#ctrlp-reference")
+            au! ctrlp-reference
+        endif
     endif
-    call call('ctrlp#acceptfile', [a:mode, a:str])
-    if exists("#ctrlp-reference")
-        au! ctrlp-reference
-    endif
+endf
+
+fu! s:check_extension(fname)
+    for extension in g:ctrlp_reference_open_extensions
+        if a:fname =~ '.\?\.'.extension
+            retu 1
+        endif
+    endfor
+    retu 0
 endf
 
 let s:id = g:ctrlp_builtins + len(g:ctrlp_ext_vars)
