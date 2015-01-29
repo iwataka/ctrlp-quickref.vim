@@ -1,0 +1,67 @@
+*ctrlp-quickref.txt*    provides fast access to any references
+*ctrlp_quickref* *CtrlP-QuickRef* *CtrlP-Quickref* *CtrlP_QuickRef* *CtrlP_Quickref*
+===============================================================================
+                         .__        __                    _____  ~
+              ________ __|__| ____ |  | _________   _____/ ____\ ~
+             / ____/  |  \  |/ ___\|  |/ /\_  __ \_/ __ \   __\  ~
+            < <_|  |  |  /  \  \___|    <  |  | \/\  ___/|  |    ~
+             \__   |____/|__|\___  >__|_ \ |__|    \___  >__|    ~
+                |__|             \/     \/             \/        ~
+===============================================================================
+CONTENTS                                            *ctrlp-quickref-contents*
+
+    1. Intro.................................|ctrlp-quickref-intro|
+    2. Usage.................................|ctrlp-quickref-usage|
+    2. Options...............................|ctrlp-quickref-options|
+    3. Commands..............................|ctrlp-quickref-commands|
+    4. Mappings..............................|ctrlp-quickref-mappings|
+
+===============================================================================
+INTRO                                                  *ctrlp-quickref-intro*
+
+This plug-in is an extension of CtrlP and provides fast access to any
+references in your local environment. Install this plug-in and register some
+paths in specified file, then you can open any files on the fly.
+
+===============================================================================
+USAGE                                                  *ctrlp-quickref-usage*
+
+===============================================================================
+OPTIONS                                              *ctrlp-quickref-options*
+
+Overview:~
+
+|ctrlp_reference_readonly_enabled|..Open files with readonly flag.
+|ctrlp_reference_open_extensions|...Indicates which file is opened out of Vim.
+
+-------------------------------------------------------------------------------
+Detailed descriptions and default values:~
+
+                                         *'g:ctrlp_reference_readonly_enabled'*
+Set this to 0 to open files without readonly flag.
+    let g:ctrlp_reference_readonly_enabled = 1
+
+                                         *'g:ctrlp_reference_open_extensions'*
+If you open files which have extensions contained in this list, they are
+opened in specified browser or PDF viewer or else.
+    let g:ctrlp_reference_open_extensions = ['html', 'pdf']
+
+===============================================================================
+COMMANDS                                            *ctrlp-quickref-commands*
+
+                                                         *:CtrlPQuickRef*
+:CtrlPQuickRef
+    Open CtrlP interface with specified paths.
+
+                                                         *:CtrlPQuickRefLastDir*
+:CtrlPQuickRefLastDir
+    Open CtrlP interface in last selected path.
+
+===============================================================================
+MAPPINGS                                            *ctrlp-quickref-mappings*
+
+This plug-in defines no mappings. If you want to know mappings in CtrlP
+interface, read CtrlP help.
+
+===============================================================================
+vim:ft=help
