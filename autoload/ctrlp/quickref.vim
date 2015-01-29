@@ -38,7 +38,7 @@ endfunction
 
 function! ctrlp#quickref#accept(mode, str)
     call ctrlp#exit()
-    silent! exe 'normal! :CtrlPReadOnly ' . a:str . "\<cr>"
+    silent! exe 'normal! :CtrlPReference ' . a:str . "\<cr>"
 endfunction
 
 let s:id = g:ctrlp_builtins + len(g:ctrlp_ext_vars)

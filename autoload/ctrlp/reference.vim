@@ -1,25 +1,25 @@
-if exists('g:loaded_ctrlp_readonly') && g:loaded_ctrlp_readonly || v:version < 700 || &cp
+if exists('g:loaded_ctrlp_reference') && g:loaded_ctrlp_reference || v:version < 700 || &cp
     finish
 endif
-let g:loaded_ctrlp_readonly = 1
+let g:loaded_ctrlp_reference = 1
 
 call add(g:ctrlp_ext_vars, {
-    \ 'init': 'ctrlp#readonly#init()',
-    \ 'accept': 'ctrlp#readonly#accept',
+    \ 'init': 'ctrlp#reference#init()',
+    \ 'accept': 'ctrlp#reference#accept',
     \ 'type': 'path',
     \ 'sort': 0,
     \ 'specinput': 0,
     \ })
 
-fu! ctrlp#readonly#init()
+fu! ctrlp#reference#init()
     let l:files = ctrlp#files()
     " If this is not here, the word 'Indexing...' is remained.
     cal ctrlp#progress('')
     retu l:files
 endf
 
-fu! ctrlp#readonly#accept(mode, str)
-    aug ctrlp-readonly
+fu! ctrlp#reference#accept(mode, str)
+    aug ctrlp-reference
         au!
         au BufEnter *
             \ setlocal readonly |
@@ -28,11 +28,11 @@ fu! ctrlp#readonly#accept(mode, str)
             \ setlocal bufhidden=delete
     aug END
     call call('ctrlp#acceptfile', [a:mode, a:str])
-    au! ctrlp-readonly
+    au! ctrlp-reference
 endf
 
 let s:id = g:ctrlp_builtins + len(g:ctrlp_ext_vars)
 
-function! ctrlp#readonly#id()
+function! ctrlp#reference#id()
     return s:id
 endfunction
