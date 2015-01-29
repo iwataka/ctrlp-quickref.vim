@@ -3,7 +3,9 @@ if exists('g:loaded_ctrlp_quickref') && g:loaded_ctrlp_quickref || v:version < 7
 endif
 let g:loaded_ctrlp_quickref = 1
 
-if !exists("#CtrlP")
+if exists("#CtrlP")
+    echom 'You may lose your autocommands grouped into CtrlP.'
+el
     aug CtrlP
 endif
 
