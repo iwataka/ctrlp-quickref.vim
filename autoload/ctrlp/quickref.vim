@@ -3,6 +3,8 @@ if exists('g:loaded_ctrlp_quickref') && g:loaded_ctrlp_quickref || v:version < 7
 endif
 let g:loaded_ctrlp_quickref = 1
 
+let g:ctrlp_quickref_last_dir = ''
+
 fu! s:read_local_config()
     if filereadable(expand('~/.ctrlp-quickref'))
         let l:content = system('cat ~/.ctrlp-quickref')
@@ -38,6 +40,7 @@ endfunction
 
 function! ctrlp#quickref#accept(mode, str)
     call ctrlp#exit()
+    let g:ctrlp_quickref_last_dir = a:str
     silent! exe 'normal! :CtrlPReference ' . a:str . "\<cr>"
 endfunction
 
