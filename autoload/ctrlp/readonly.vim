@@ -3,8 +3,6 @@ if exists('g:loaded_ctrlp_readonly') && g:loaded_ctrlp_readonly || v:version < 7
 endif
 let g:loaded_ctrlp_readonly = 1
 
-let g:ctrlp_readonly_dir = ''
-
 call add(g:ctrlp_ext_vars, {
     \ 'init': 'ctrlp#readonly#init()',
     \ 'accept': 'ctrlp#readonly#accept',
