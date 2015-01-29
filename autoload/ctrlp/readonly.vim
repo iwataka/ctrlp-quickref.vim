@@ -14,7 +14,10 @@ call add(g:ctrlp_ext_vars, {
     \ })
 
 fu! ctrlp#readonly#init()
-    retu copy(ctrlp#files())
+    let l:files = ctrlp#files()
+    " If this is not here, the word 'Indexing...' is remained.
+    cal ctrlp#progress('')
+    retu l:files
 endf
 
 fu! ctrlp#readonly#accept(mode, str)
