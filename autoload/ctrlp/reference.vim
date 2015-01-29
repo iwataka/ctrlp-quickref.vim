@@ -44,7 +44,6 @@ fu! ctrlp#reference#accept(mode, str)
                 au BufEnter *
                     \ setlocal readonly |
                     \ setlocal nomodifiable |
-                    \ setlocal nobuflisted |
                     \ setlocal bufhidden=delete
             aug END
         endif
