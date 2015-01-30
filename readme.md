@@ -98,6 +98,12 @@ files on the fly.
 
 + [ctrlp.vim](https://github.com/kien/ctrlp.vim)
 
++ [ctrlp-py-matcher](https://github.com/FelikZ/ctrlp-py-matcher)(optional, but
+    recommended)
+
++ [the_silver_searhcer](https://github.com/ggreer/the_silver_searcher)(optionak,
+    but recommended)
+
 ## Installation
 
 Clone this repository and put that directory in ~/.vim.
