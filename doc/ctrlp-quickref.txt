@@ -44,19 +44,18 @@ file and write them like below in it.
     # Write
     # Some
     # Comments
-    /directory1/name/src
+    /directory1/library_or_something_else/src
     /directory2/*/src
 
     # Additional comment
     /directory3/*
 
-That's all you should do.
-Then you run the command :CtrlPQuickRef and CtrlP interface with paths which
-are registered by you. After you choose one of them typing some characters and
-hit Enter, you get CtrlP interface again with files in selected path. If you
-selected one or more of these files, they are opened in Vim with readonly flag
-by default.
-Doing like this, you can open any files on the fly.
+That's all you should do.  Then you run the command :CtrlPQuickRef and get
+CtrlP interface with paths which are registered by you. After you choose one
+of them by typing some characters and hit Enter, you get CtrlP interface again
+with files in selected path. If you selected one or more of these files, they
+are opened in Vim. They are opened with readonly flag by default.  Doing like
+this, you can open any files on the fly.
 
 ===============================================================================
 OPTIONS                                              *ctrlp-quickref-options*
