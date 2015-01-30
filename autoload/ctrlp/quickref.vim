@@ -9,21 +9,44 @@ fu! s:read_local_config()
     if filereadable(expand('~/.ctrlp-quickref'))
         let l:content = system('cat ~/.ctrlp-quickref')
         let l:lines = split(l:content, "\n")
-        let l:paths = []
+        let l:inclusive_paths = []
+        let l:exclusive_paths = []
         for line in l:lines
-            if line !~ '^#' && line != ''
+            if line =~ '^!\s\?'
+                let l:tmp_paths = split(expand(substitute(line, '^!\s\?', "", "")), '\n')
+                for path in l:tmp_paths
+                    if isdirectory(path)
+                        call add(l:exclusive_paths, path)
+                    endif
+                endfor
+            elseif line !~ '^#' && line != ''
                 let l:tmp_paths = split(expand(line), '\n')
                 for path in l:tmp_paths
                     if isdirectory(path)
-                        call add(l:paths, path)
+                        call add(l:inclusive_paths, path)
                     endif
                 endfor
+            endif
+        endfor
+        let l:paths = []
+        for path in l:inclusive_paths
+            if !s:contains(exclusive_paths, path)
+                call add(l:paths, path)
             endif
         endfor
         retu l:paths
     el
         retu []
     endif
+endf
+
+fu! s:contains(list, item)
+    for i in a:list
+        if i == a:item
+            retu 1
+        endif
+    endfor
+    retu 0
 endf
 
 call add(g:ctrlp_ext_vars, {
