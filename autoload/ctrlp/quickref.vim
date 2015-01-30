@@ -5,8 +5,10 @@ let g:loaded_ctrlp_quickref = 1
 
 let g:ctrlp_quickref_last_dir = ''
 
+let g:ctrlp_quickref_configuration_file = '~/.ctrlp-quickref'
+
 fu! s:read_local_config()
-    if filereadable(expand('~/.ctrlp-quickref'))
+    if filereadable(expand(g:ctrlp_quickref_configuration_file))
         let l:content = system('cat ~/.ctrlp-quickref')
         let l:lines = split(l:content, "\n")
         let l:exclusive_paths = []
