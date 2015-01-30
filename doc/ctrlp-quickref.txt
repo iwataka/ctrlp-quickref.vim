@@ -101,6 +101,11 @@ COMMANDS                                            *ctrlp-quickref-commands*
 :CtrlPQuickRefLastDir
     Open CtrlP interface in last selected directory.
 
+                                                         *:CtrlPReference*
+:CtrlPReference
+    Almost same as CtrlP command, but open files with readonly flag by
+    default.
+
 ===============================================================================
 MAPPINGS                                            *ctrlp-quickref-mappings*
 
