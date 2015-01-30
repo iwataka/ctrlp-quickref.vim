@@ -1,4 +1,4 @@
-*ctrlp-quickref.txt*    provides fast access to any references
+*ctrlp-quickref.txt*    provides quick access to any references
 *ctrlp_quickref* *CtrlP-QuickRef* *CtrlP-Quickref* *CtrlP_QuickRef* *CtrlP_Quickref*
 ===============================================================================
                          .__        __                    _____  ~
@@ -21,7 +21,7 @@ INTRO                                                  *ctrlp-quickref-intro*
 
 This plug-in is an extension of CtrlP and provides quick access to any
 references in your local environment. Install this plug-in and register some
-paths in specified file, then you can open any files on the fly.
+paths in specified variable or file, then you can open any files on the fly.
 
 ===============================================================================
 USAGE                                                  *ctrlp-quickref-usage*
@@ -36,6 +36,7 @@ Overview:~
 Vim.
 |ctrlp_quickref_configuration_file|.....The path which indicates the
 configuration file
+|ctrlp_quickref_paths|..................The candidates of this plug-in.
 
 -------------------------------------------------------------------------------
 Detailed descriptions and default values:~
@@ -53,6 +54,10 @@ opened in specified browser or PDF viewer or else.
 This is the path which indicates the configuration file.
     let g:ctrlp_quickref_configuration_file = '~/.ctrlp-quickref'
 
+                                         *'g:ctrlp_quickref_paths'*
+This list contains paths which are the candidates of this plug-in.
+    let g:ctrlp_quickref_paths = []
+
 ===============================================================================
 COMMANDS                                            *ctrlp-quickref-commands*
 
@@ -62,7 +67,7 @@ COMMANDS                                            *ctrlp-quickref-commands*
 
                                                          *:CtrlPQuickRefLastDir*
 :CtrlPQuickRefLastDir
-    Open CtrlP interface in last selected path.
+    Open CtrlP interface in last selected directory.
 
 ===============================================================================
 MAPPINGS                                            *ctrlp-quickref-mappings*
