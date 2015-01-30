@@ -15,6 +15,7 @@ CONTENTS                                            *ctrlp-quickref-contents*
     2. Options...............................|ctrlp-quickref-options|
     3. Commands..............................|ctrlp-quickref-commands|
     4. Mappings..............................|ctrlp-quickref-mappings|
+    5. License...............................|ctrlp-quickref-license|
 
 ===============================================================================
 INTRO                                                  *ctrlp-quickref-intro*
@@ -122,6 +123,13 @@ MAPPINGS                                            *ctrlp-quickref-mappings*
 
 This plug-in defines no mappings. If you want to know mappings in CtrlP
 interface, read CtrlP help.
+
+===============================================================================
+LICENSE                                            *ctrlp-quickref-license*
+
+Copyright(c) 2015 Takatoshi Iwasa
+Released under the MIT license
+http://opensource.org/licenses/mit-license.php
 
 ===============================================================================
 vim:ft=help
