@@ -3,6 +3,7 @@
 This plug-in is an extension of CtrlP and provides quick access to any
 references in your local environment. Install this plug-in and register some
 paths in specified variable or file, then you can open any files on the fly.
+
 This plug-in also detect extensions of files and when opening files with
 specified extensions like html or pdf, they are opened by "open-command"
 which is "open" in Mac OS, "xdg-open" in Linux OS, "start" in Windows OS or
@@ -52,12 +53,15 @@ files on the fly.
 ## Commands
 
 + :CtrlPQuickRef
+
     Open CtrlP interface with specified paths.
 
 + :CtrlPQuickRefLastDir
+
     Open CtrlP interface in last selected directory.
 
 + :CtrlPReference
+
     Almost same as CtrlP command, but open files with readonly flag by default.
 
 ## Requirement
