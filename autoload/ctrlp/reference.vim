@@ -3,10 +3,6 @@ if exists('g:loaded_ctrlp_reference') && g:loaded_ctrlp_reference || v:version <
 endif
 let g:loaded_ctrlp_reference = 1
 
-let g:ctrlp_reference_readonly_enabled = 1
-
-let g:ctrlp_reference_open_extensions = ['html', 'pdf']
-
 let s:open_command = ''
 if has('unix')
     let s:open_command = 'xdg-open'
@@ -38,7 +34,7 @@ fu! ctrlp#reference#accept(mode, str)
         call system(s:open_command.' '.a:str)
         call ctrlp#exit()
     el
-        if g:ctrlp_reference_readonly_enabled
+        if g:ctrlp_quickref_readonly_enabled
             aug ctrlp-reference
                 au!
                 au BufEnter *
@@ -55,7 +51,7 @@ fu! ctrlp#reference#accept(mode, str)
 endf
 
 fu! s:check_extension(fname)
-    for extension in g:ctrlp_reference_open_extensions
+    for extension in g:ctrlp_quickref_open_extensions
         if a:fname =~ '.\?\.'.extension
             retu 1
         endif

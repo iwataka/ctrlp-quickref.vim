@@ -3,6 +3,10 @@ if exists('g:loaded_ctrlp_quickref') && g:loaded_ctrlp_quickref || v:version < 7
 endif
 let g:loaded_ctrlp_quickref = 1
 
+let g:ctrlp_quickref_readonly_enabled = 1
+
+let g:ctrlp_quickref_open_extensions = ['html', 'pdf']
+
 let g:ctrlp_quickref_last_dir = ''
 
 let g:ctrlp_quickref_configuration_file = '~/.ctrlp-quickref'
