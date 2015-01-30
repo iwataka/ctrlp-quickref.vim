@@ -63,8 +63,13 @@ function! ctrlp#quickref#init()
     if !exists('g:ctrlp_quickref_paths')
         let g:ctrlp_quickref_paths = []
     endif
+    let l:paths = []
+    for path in g:ctrlp_quickref_paths
+        let l:tmp_paths = split(expand(path), '\n')
+        call s:add_directories(l:paths, l:tmp_paths)
+    endfor
     let l:additional_paths = s:read_local_config()
-    return g:ctrlp_quickref_paths + l:additional_paths
+    return l:paths + l:additional_paths
 endfunction
 
 function! ctrlp#quickref#accept(mode, str)
