@@ -31,7 +31,7 @@ search in g:ctrlp_quickref_paths variable or ~/.ctrlp-quickref file. If you
 want to register paths in the variable, you should write them like below in
 your vimrc.
 
-    g:ctrlp_quickref_paths = [
+    let g:ctrlp_quickref_paths = [
         \ '/directory1/library_or_something_else/src',
         \ '/directory2/*/src',
         \ '/directory3/*'
