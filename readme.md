@@ -1,5 +1,13 @@
 # ctrlp-quickref.vim
 
+## Motivation
+
+When you write programs, you may want to view source codes of libraries,
+applications or something like that which you use. If you use this plug-in, you
+can view them without any effort!
+
+## Introduction
+
 This plug-in is an extension of CtrlP and provides quick access to any
 references in your local environment. Install this plug-in and register some
 paths in specified variable or file, then you can open any files on the fly.
