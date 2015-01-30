@@ -103,6 +103,8 @@ files on the fly.
 
 + [ctrlp.vim](https://github.com/kien/ctrlp.vim)
 
++ xdg-open command (if you use Linux OS)
+
 + [ctrlp-py-matcher](https://github.com/FelikZ/ctrlp-py-matcher)(optional, but
     recommended)
 
