@@ -7,6 +7,13 @@ let g:ctrlp_quickref_last_dir = ''
 
 let g:ctrlp_quickref_configuration_file = '~/.ctrlp-quickref'
 
+fu! ctrlp#quickref#edit()
+    if filereadable(expand(g:ctrlp_quickref_configuration_file))
+        echom 'readable'
+        exe "normal! :e ".g:ctrlp_quickref_configuration_file."\<cr>"
+    endif
+endf
+
 fu! s:read_config(lines)
     let l:exclusive_paths = []
     let l:inclusive_paths = []
@@ -78,7 +85,7 @@ endf
 fu! ctrlp#quickref#accept(mode, str)
     call ctrlp#exit()
     let g:ctrlp_quickref_last_dir = a:str
-    silent! exe 'normal! :CtrlPReference ' . a:str . "\<cr>"
+    call ctrlp#init(ctrlp#reference#id(), {'dir': a:str})
 endf
 
 let s:id = g:ctrlp_builtins + len(g:ctrlp_ext_vars)
