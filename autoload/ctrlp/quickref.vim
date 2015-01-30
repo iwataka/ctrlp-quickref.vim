@@ -71,18 +71,18 @@ call add(g:ctrlp_ext_vars, {
     \ 'specinput': 0,
     \ })
 
-function! ctrlp#quickref#init()
+fu! ctrlp#quickref#init()
     retu s:read_file_config() + s:read_variable_config()
-endfunction
+endf
 
-function! ctrlp#quickref#accept(mode, str)
+fu! ctrlp#quickref#accept(mode, str)
     call ctrlp#exit()
     let g:ctrlp_quickref_last_dir = a:str
     silent! exe 'normal! :CtrlPReference ' . a:str . "\<cr>"
-endfunction
+endf
 
 let s:id = g:ctrlp_builtins + len(g:ctrlp_ext_vars)
 
-function! ctrlp#quickref#id()
-    return s:id
-endfunction
+fu! ctrlp#quickref#id()
+    retu s:id
+endf

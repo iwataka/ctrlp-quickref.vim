@@ -65,6 +65,6 @@ endf
 
 let s:id = g:ctrlp_builtins + len(g:ctrlp_ext_vars)
 
-function! ctrlp#reference#id()
-    return s:id
-endfunction
+fu! ctrlp#reference#id()
+    retu s:id
+endf
