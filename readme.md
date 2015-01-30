@@ -1,7 +1,8 @@
-# CtrlP QuickRef
+# ctrlp-quickref.vim
 
 This plug-in is an extension of CtrlP and provides quick access to any
-references in your local environment.
+references in your local environment. Install this plug-in and register some
+paths in specified variable or file, then you can open any files on the fly.
 
 ## Usage
 
@@ -25,11 +26,11 @@ First paths are loaded from the variable g:ctrlp_quickref_paths or
     # wildcard can be used
     another/path/*
 
-## Dependencies
+## Requirement
 
-[CtrlP](https://github.com/kien/ctrlp.vim) only
++ [ctrlp.vim](https://github.com/kien/ctrlp.vim)
 
-## Install
+## Installation
 
 Clone this repository and put that directory in ~/.vim.
-You can also use favorite package manager to install this.
+You can also use your favorite package manager to install this.
