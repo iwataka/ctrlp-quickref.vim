@@ -63,6 +63,7 @@ files on the fly.
 + :CtrlPReference
 
     Almost same as CtrlP command, but open files with readonly flag by default.
+    This command is used after :CtrlPQuickRef command.
 
 ## Options
 

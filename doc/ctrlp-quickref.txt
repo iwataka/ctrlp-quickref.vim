@@ -116,7 +116,7 @@ COMMANDS                                            *ctrlp-quickref-commands*
                                                          *:CtrlPReference*
 :CtrlPReference
     Almost same as CtrlP command, but open files with readonly flag by
-    default.
+    default. This command is used after :CtrlPQuickRef command.
 
 ===============================================================================
 MAPPINGS                                            *ctrlp-quickref-mappings*
