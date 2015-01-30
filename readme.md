@@ -64,6 +64,27 @@ files on the fly.
 
     Almost same as CtrlP command, but open files with readonly flag by default.
 
+## Options
+
++ ctrlp_reference_readonly_enabled
+
+    Set this to 0 to open files without readonly flag (default: 1).
+
++ ctrlp_reference_open_extensions
+
+    If you open files which have extensions contained in this list, they are
+    opened by "open-command" (default: ['html', 'pdf']).
+
++ ctrlp_quickref_configuration_file
+
+    If you want to write paths in other file, set this to the path (default:
+    '~/.ctrlp-quickref').
+
++ ctrlp_quickref_paths
+
+    This list contains paths which are the candidates of this plug-in (default:
+    []).
+
 ## Requirement
 
 + [ctrlp.vim](https://github.com/kien/ctrlp.vim)
