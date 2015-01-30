@@ -9,23 +9,15 @@ fu! s:read_local_config()
     if filereadable(expand('~/.ctrlp-quickref'))
         let l:content = system('cat ~/.ctrlp-quickref')
         let l:lines = split(l:content, "\n")
-        let l:inclusive_paths = []
         let l:exclusive_paths = []
+        let l:inclusive_paths = []
         for line in l:lines
             if line =~ '^!\s\?'
                 let l:tmp_paths = split(expand(substitute(line, '^!\s\?', "", "")), '\n')
-                for path in l:tmp_paths
-                    if isdirectory(path)
-                        call add(l:exclusive_paths, path)
-                    endif
-                endfor
+                call s:add_directories(l:exclusive_paths, l:tmp_paths)
             elseif line !~ '^#' && line != ''
                 let l:tmp_paths = split(expand(line), '\n')
-                for path in l:tmp_paths
-                    if isdirectory(path)
-                        call add(l:inclusive_paths, path)
-                    endif
-                endfor
+                call s:add_directories(l:inclusive_paths, l:tmp_paths)
             endif
         endfor
         let l:paths = []
@@ -38,6 +30,14 @@ fu! s:read_local_config()
     el
         retu []
     endif
+endf
+
+fu! s:add_directories(list, paths)
+    for path in a:paths
+        if isdirectory(path)
+            call add(a:list, path)
+        endif
+    endfor
 endf
 
 fu! s:contains(list, item)
