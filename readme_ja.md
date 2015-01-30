@@ -120,4 +120,4 @@ gitignoreなどの構文を意識しています。
 
 + [the_silver_searhcer](https://github.com/ggreer/the_silver_searcher)
 
-    CtrlPユーザの多くが使っているかもしれませんが、これもおすすめしておきます。
+    CtrlPユーザの多くが使っているかもしれませんが、これもおすすめです。
