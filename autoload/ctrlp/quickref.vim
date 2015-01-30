@@ -12,8 +12,12 @@ fu! s:read_local_config()
         let l:paths = []
         for line in l:lines
             if line !~ '^#' && line != ''
-                let l:path = split(expand(line), '\n')
-                let l:paths += l:path
+                let l:tmp_paths = split(expand(line), '\n')
+                for path in l:tmp_paths
+                    if isdirectory(path)
+                        call add(l:paths, path)
+                    endif
+                endfor
             endif
         endfor
         retu l:paths
