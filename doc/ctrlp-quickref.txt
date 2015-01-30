@@ -75,8 +75,8 @@ OPTIONS                                              *ctrlp-quickref-options*
 
 Overview:~
 
-|ctrlp_reference_readonly_enabled|......Open files with readonly flag.
-|ctrlp_reference_open_extensions|.......Indicates which file is opened out of
+|ctrlp_quickref_readonly_enabled|......Open files with readonly flag.
+|ctrlp_quickref_open_extensions|.......Indicates which file is opened out of
 Vim.
 |ctrlp_quickref_configuration_file|.....The path which indicates the
 configuration file
@@ -85,14 +85,14 @@ configuration file
 -------------------------------------------------------------------------------
 Detailed descriptions and default values:~
 
-                                         *'g:ctrlp_reference_readonly_enabled'*
+                                         *'g:ctrlp_quickref_readonly_enabled'*
 Set this to 0 to open files without readonly flag.
-    let g:ctrlp_reference_readonly_enabled = 1
+    let g:ctrlp_quickref_readonly_enabled = 1
 
-                                         *'g:ctrlp_reference_open_extensions'*
+                                         *'g:ctrlp_quickref_open_extensions'*
 If you open files which have extensions contained in this list, they are
 opened in specified browser or PDF viewer or else.
-    let g:ctrlp_reference_open_extensions = ['html', 'pdf']
+    let g:ctrlp_quickref_open_extensions = ['html', 'pdf']
 
                                          *'g:ctrlp_quickref_configuration_file'*
 This is the path which indicates the configuration file.

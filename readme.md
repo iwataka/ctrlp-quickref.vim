@@ -79,11 +79,11 @@ files on the fly.
 
 ## Options
 
-+ ctrlp_reference_readonly_enabled
++ ctrlp_quickref_readonly_enabled
 
     Set this to 0 to open files without readonly flag (default: 1).
 
-+ ctrlp_reference_open_extensions
++ ctrlp_quickref_open_extensions
 
     If you open files which have extensions contained in this list, they are
     opened by "open-command" (default: ['html', 'pdf']).
