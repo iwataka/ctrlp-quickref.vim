@@ -101,7 +101,7 @@ files on the fly.
 + [ctrlp-py-matcher](https://github.com/FelikZ/ctrlp-py-matcher)(optional, but
     recommended)
 
-+ [the_silver_searhcer](https://github.com/ggreer/the_silver_searcher)(optionak,
++ [the_silver_searhcer](https://github.com/ggreer/the_silver_searcher)(optional,
     but recommended)
 
 ## Installation
