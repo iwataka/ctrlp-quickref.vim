@@ -26,6 +26,38 @@ paths in specified variable or file, then you can open any files on the fly.
 ===============================================================================
 USAGE                                                  *ctrlp-quickref-usage*
 
+After installing this plug-in, you should register some paths you want to
+search in g:ctrlp_quickref_paths variable or ~/.ctrlp-quickref file. If you
+want to register paths in the variable, you should write them like below in
+your vimrc.
+
+    g:ctrlp_quickref_paths = [
+        \ '/directory1/name/src',
+        \ '/directory2/*/src',
+        \ '/directory3/*'
+    ]
+
+Wildcards are automatically expanded.
+If you want to write paths in other file, you should make ~/.ctrlp-quickref
+file and write them like below in it.
+
+    # Write
+    # Some
+    # Comments
+    /directory1/name/src
+    /directory2/*/src
+
+    # Additional comment
+    /directory3/*
+
+That's all you should do.
+Then you run the command :CtrlPQuickRef and CtrlP interface with paths which
+are registered by you. After you choose one of them typing some characters and
+hit Enter, you get CtrlP interface again with files in selected path. If you
+selected one or more of these files, they are opened in Vim with readonly flag
+by default.
+Doing like this, you can open any files on the fly.
+
 ===============================================================================
 OPTIONS                                              *ctrlp-quickref-options*
 
