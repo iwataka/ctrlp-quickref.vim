@@ -49,6 +49,17 @@ path. If you selected one or more of these files, they are opened in Vim. They
 are opened with readonly flag by default.  Doing like this, you can open any
 files on the fly.
 
+## Commands
+
++ :CtrlPQuickRef
+    Open CtrlP interface with specified paths.
+
++ :CtrlPQuickRefLastDir
+    Open CtrlP interface in last selected directory.
+
++ :CtrlPReference
+    Almost same as CtrlP command, but open files with readonly flag by default.
+
 ## Requirement
 
 + [ctrlp.vim](https://github.com/kien/ctrlp.vim)
