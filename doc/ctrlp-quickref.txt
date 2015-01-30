@@ -32,7 +32,7 @@ want to register paths in the variable, you should write them like below in
 your vimrc.
 
     g:ctrlp_quickref_paths = [
-        \ '/directory1/name/src',
+        \ '/directory1/library_or_something_else/src',
         \ '/directory2/*/src',
         \ '/directory3/*'
     ]
