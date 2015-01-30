@@ -73,10 +73,9 @@ files on the fly.
 
     Open CtrlP interface in last selected directory.
 
-+ :CtrlPReference
++ :CtrlPQuickRefEdit
 
-    Almost same as CtrlP command, but open files with readonly flag by default.
-    This command is used after :CtrlPQuickRef command.
+    Open the configuration file (~/.ctrlp-quickref by default).
 
 ## Options
 
