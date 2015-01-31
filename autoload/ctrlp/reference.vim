@@ -52,7 +52,7 @@ endf
 
 fu! s:check_extension(fname)
     for extension in g:ctrlp_quickref_open_extensions
-        if a:fname =~ '.\?\.'.extension
+        if a:fname =~ '.\?\.'.extension.'$'
             retu 1
         endif
     endfor
