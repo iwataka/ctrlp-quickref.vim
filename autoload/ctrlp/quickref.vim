@@ -41,7 +41,8 @@ endf
 
 fu! s:read_file_config()
     if filereadable(expand(g:ctrlp_quickref_configuration_file))
-        let l:lines = readfile(expand(g:ctrlp_quickref_configuration_file))
+        let l:content = system('cat '.g:ctrlp_quickref_configuration_file)
+        let l:lines = split(l:content, "\n")
         retu s:read_config(l:lines)
     el
         retu []
