@@ -17,11 +17,6 @@ specified extensions like html or pdf, they are opened by "open-command"
 which is "open" in Mac OS, "xdg-open" in Linux OS, "start" in Windows OS or
 "cygstart" in Cygwin environment.
 
-## Demonstration
-
-You get CtrlP interface twice and can open any references!
-![Demo](https://github.com/iwataka/images/blob/master/quickref.gif)
-
 ## Usage
 
 After installing this plug-in, you should register some paths you want to
